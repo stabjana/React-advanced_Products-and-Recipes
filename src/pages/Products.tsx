@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getProducts } from "../services/api";
 import { Products } from "../types/product";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import {
   Typography,
   Card,
@@ -45,10 +45,17 @@ function Products() {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button size="small" /* sx={{palette="primary.dark"}} */>Add to cart</Button>
-              <Button size="small" component={Link}
-                to={`/products/${product.id}`}>Learn More</Button>
-             
+              <Button size="small" /* sx={{palette="primary.dark"}} */>
+                Add to cart
+              </Button>
+              <Button
+                size="small"
+                component={Link}
+                to={`/products/${product.id}`}
+                state={{ product }}
+              >
+                Learn More
+              </Button>
             </CardActions>
           </Card>
         );
