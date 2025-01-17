@@ -9,6 +9,8 @@ import {
 import { Link, Route, Routes } from "react-router-dom";
 import Products from "./pages/Products";
 import Recipe from "./pages/Recipe";
+import Home from "./pages/Home";
+import SingleProduct from "./pages/singleProduct";
 
 function App() {
   return (
@@ -31,9 +33,10 @@ function App() {
       </AppBar>
       <Container sx={{ mt: 4 }}>
         <Routes>
-          <Route path="/" element={<div>Home Page</div>} />
+          <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
           <Route path="/recipe/:id" element={<Recipe />} />
+          <Route path="/products/:id" element={<SingleProduct />} />
         </Routes>
       </Container>
     </Box>

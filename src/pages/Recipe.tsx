@@ -32,19 +32,17 @@ function Recipe() {
       <CardMedia
         component="img"
         height="300"
-        // TODO: Add image
-        // image={recipe.image}
-        // alt={recipe.name}
+        alt={recipe.name}
+        image={recipe.image}
       />
       <CardContent>
         <Typography variant="h4" gutterBottom>
-          {/* TODO: Add name */}
-          {/* {recipe.name} */}
+          {recipe.name}
         </Typography>
-        {/* TODO: Add more recipe details here */}
+        {/* Add more recipe details here */}
       </CardContent>
     </Card>
-  );
+  );  
 }
 
 export default Recipe;
