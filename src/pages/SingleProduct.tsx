@@ -1,13 +1,13 @@
 import { useLocation, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import {  Products } from "../types/product";
+import {  Product } from "../types/product";
 
 const SingleProduct = () => {
     const location = useLocation();
     const productId = useParams();
     // Here we retrieve the state from React router dom.
-    const [product, setProduct] = useState<Products | undefined>(
-      (location.state as { product: Products })?.product
+    const [product, setProduct] = useState<Product | undefined>(
+      (location.state as { product: Product })?.product
     );
     console.log(product);
     console.log(productId);
