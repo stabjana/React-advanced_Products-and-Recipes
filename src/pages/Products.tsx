@@ -11,7 +11,11 @@ import {
   Button,
 } from "@mui/material";
 
-function Products() {
+interface ProductsProps {
+  onAddToCart: (product: Product) => void;
+}
+
+function Products({ onAddToCart }: ProductsProps) {
   const [products, setProducts] = useState<Products[]>([]);
 
   useEffect(() => {
@@ -45,7 +49,7 @@ function Products() {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button size="small" /* sx={{palette="primary.dark"}} */>
+              <Button size="small" /* sx={{palette="primary.dark"}} */ onClick={() => onAddToCart(product)} >
                 Add to cart
               </Button>
               <Button
