@@ -3,7 +3,7 @@ export interface Rating{
     count: number;
 }
 
-interface Products {
+interface Product {
 
     id: number;
     title: string;
@@ -14,4 +14,4 @@ interface Products {
     rating: Rating;
 }
 
-export default Products;
+export default Product;

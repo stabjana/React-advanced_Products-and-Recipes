@@ -1,16 +1,25 @@
 import { useLocation, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import {  Products } from "../types/product";
+import { Link } from "react-router-dom";
+import { Product } from "../types/product";
+import {
+  Typography,
+  Card,
+  CardContent,
+  CardActions,
+  CardMedia,
+  Button,
+} from "@mui/material";
 
 const SingleProduct = () => {
-    const location = useLocation();
-    const productId = useParams();
-    // Here we retrieve the state from React router dom.
-    const [product, setProduct] = useState<Products | undefined>(
-      (location.state as { product: Products })?.product
-    );
-    console.log(product);
-    console.log(productId);
+  const location = useLocation();
+  const productId = useParams();
+  // Here we retrieve the state from React router dom.
+  const [product, setProduct] = useState<Product | undefined>(
+    (location.state as { product: Product })?.product
+  );
+  console.log(product);
+  console.log(productId);
 
   // to cache the data
   // Case is handled if product is not found in the state we call it from the single product api
@@ -30,6 +39,12 @@ const SingleProduct = () => {
   return (
     <div>
       <p>{product?.title}</p>
+      <Button size="small" /* sx={{palette="primary.dark"}} */>
+        Add to cart
+      </Button>
+      <Button size="small" component={Link} to={`/products`}>
+        Back
+      </Button>
     </div>
   );
 };
